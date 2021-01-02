@@ -21,6 +21,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  */
 let whiteListedModules = ['vue']
 
+const port = process.env.port || process.env.npm_config_port || 9527 // dev port
+
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
@@ -150,7 +152,16 @@ let rendererConfig = {
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
-  target: 'electron-renderer'
+  target: 'electron-renderer',
+  devServer: {
+    port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    before: require(path.join(__dirname, '../mock/mock-server.js'))
+  },
 }
 
 /**
