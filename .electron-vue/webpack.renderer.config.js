@@ -159,8 +159,7 @@ let rendererConfig = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    before: require(path.join(__dirname, '../mock/mock-server.js'))
+    }
   },
 }
 

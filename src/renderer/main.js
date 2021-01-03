@@ -15,12 +15,6 @@ import '@/permission' // permission control
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 
-// if (process.env.NODE_ENV === 'production') {}
-if (process.env.NODE_ENV === 'development') {
-  const { mockXHR } = require('../../mock')
-  mockXHR()
-}
-
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
