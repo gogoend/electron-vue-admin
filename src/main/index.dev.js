@@ -7,20 +7,18 @@
 
 /* eslint-disable */
 
+let path = require('path')
+const { session } = require('electron')
+
 // Set environment for development
 process.env.NODE_ENV = 'development'
 
-// Install `electron-debug` with `devtron`
-require('electron-debug')({ showDevTools: true })
-
 // Install `vue-devtools`
 require('electron').app.on('ready', () => {
-  let installExtension = require('electron-devtools-installer')
-  installExtension.default(installExtension.VUEJS_DEVTOOLS)
-    .then(() => {})
-    .catch(err => {
-      console.log('Unable to install `vue-devtools`: \n', err)
-    })
+  // 在 npm install vue-devtools --save-dev 后，手动加载vue-devtools
+  const devToolPath = path.join(`../../node_modules/vue-devtools/vender`)
+  session.defaultSession.loadExtension(path.resolve(__dirname, devToolPath))
+  // BrowserWindow.addDevToolsExtension
 })
 
 // Require `main` process to boot app
