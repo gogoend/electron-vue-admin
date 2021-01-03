@@ -20,13 +20,16 @@ export default {
 
   html, body, #app{
     height: 100%;
+    background-color: transparent;
   }
   #app{
     display: flex;
+    overflow: hidden;
     flex-direction: column;
+    background-color: #fff;
     .title-bar, .status-bar {
       display: flex;
-      flex: 0 0 32px;
+      flex: 0 0 24px;
       align-items: center;
     }
     .main-content {

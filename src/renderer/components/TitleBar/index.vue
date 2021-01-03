@@ -9,7 +9,7 @@
               <li>文件</li>
           </ul>
       </section>
-      <section class="bar-section">FFShell</section>
+      <section class="bar-section title-text">FFShell</section>
       <section class="bar-section">
           <el-button type="danger" @click="handleQuit">×</el-button>
       </section>
@@ -36,6 +36,11 @@ export default {
         height: 100%;
         display: flex;
         align-items: center;
+        &.title-text {
+            -webkit-app-region: drag;
+            flex: 1;
+            justify-content: center;
+        }
     }
     ul.file-menu {
         display: flex;
