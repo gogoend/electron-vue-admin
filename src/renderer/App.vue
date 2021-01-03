@@ -1,14 +1,36 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <title-bar class="title-bar" />
+    <router-view class="main-content"></router-view>
+    <section class="status-bar">状态栏</section>
   </div>
 </template>
 
 <script>
+import TitleBar from '@/components/TitleBar'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TitleBar
+  }
 }
 </script>
 <style lang="scss">
   @import './styles/index.scss'; // 全局自定义的css样式
+
+  html, body, #app{
+    height: 100%;
+  }
+  #app{
+    display: flex;
+    flex-direction: column;
+    .title-bar, .status-bar {
+      display: flex;
+      flex: 0 0 32px;
+      align-items: center;
+    }
+    .main-content {
+      flex: 1
+    }
+  }
 </style>

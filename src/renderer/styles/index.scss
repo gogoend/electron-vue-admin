@@ -51,7 +51,8 @@ a:hover {
 
 //main-container全局样式
 .app-main{
-  min-height: 100%
+  max-height: calc(100% - 50px);
+  overflow: auto;
 }
 
 .app-container {

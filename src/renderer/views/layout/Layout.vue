@@ -41,7 +41,7 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "../../styles/mixin.scss";
   .app-wrapper {
-    @include clearfix;
+    display: flex;
     position: relative;
     height: 100%;
     width: 100%;

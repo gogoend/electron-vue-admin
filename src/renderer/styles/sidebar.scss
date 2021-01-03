@@ -4,7 +4,8 @@
   .main-container {
     min-height: 100%;
     transition: margin-left .28s;
-    margin-left: 180px;
+    width: 100%;
+    // margin-left: 180px;
   }
 
    // 侧边栏
@@ -12,14 +13,15 @@
     .horizontal-collapse-transition {
       transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
     }
+    flex: 1 0 auto;
     transition: width .28s;
     width: 180px !important;
     height: 100%;
-    position: fixed;
+    // position: fixed;
     font-size: 0px;
-    top: 0;
-    bottom: 0;
-    left: 0;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
     z-index: 1001;
     overflow: hidden;
     a {
@@ -40,7 +42,7 @@
       width: 36px !important;
     }
     .main-container {
-      margin-left: 36px;
+      // margin-left: 36px;
     }
     .submenu-title-noDropdown {
       padding-left: 10px !important;
