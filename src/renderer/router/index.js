@@ -39,7 +39,7 @@ export const constantRouterMap = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/Dashboard/index'),
         meta: {
           title: '仪表板'
         }
@@ -54,9 +54,24 @@ export const constantRouterMap = [
     children: [
       {
         path: 'index',
-        component: () => import('@/views/about/index'),
+        component: () => import('@/views/About/index'),
         meta: {
           title: '关于'
+        }
+      }
+    ]
+  },
+  {
+    path: '/filer',
+    component: Layout,
+    redirect: '/filer/index',
+    name: 'Filer',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/Filer/index'),
+        meta: {
+          title: '文件选择器'
         }
       }
     ]
