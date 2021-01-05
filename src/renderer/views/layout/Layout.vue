@@ -43,7 +43,7 @@ export default {
   .app-wrapper {
     display: flex;
     position: relative;
-    height: 100%;
+    max-height: calc(100% - 64px);;
     width: 100%;
   }
 </style>
